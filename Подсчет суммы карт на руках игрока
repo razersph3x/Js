@@ -1,0 +1,41 @@
+<meta charset="utf-8">
+<script>
+function getRandomInt(min, max){
+return Math.floor(Math.random()*(max - min + 1)) + min;
+}
+
+function getCard(){
+var Cards = ['6','7','8','9','10','J','Q','K','A'];
+return Cards[getRandomInt(0, Cards.length - 1)];
+}
+function getSum(arr){
+var sum;
+var sum2;
+if (arr[0]== 6){
+sum = 6;}else if(arr[0] == 7){
+sum = 7;}else if(arr[0] == 8){
+sum = 8;}else if(arr[0] == 9){
+sum = 9;}else if(arr[0] == 10){
+sum = 10;}else if(arr[0] == 'J'||'Q'||'K'){
+sum = 10}else if(arr[0] == 'A'){
+sum = 11;}
+sum = parseInt(sum);
+if(arr[1]== 6){
+sum2 = 6;}else if(arr[1] == 7){
+sum2 = 7;}else if(arr[1] == 8){
+sum2 = 8;}else if(arr[1] == 9){
+sum2 = 9;}else if(arr[1] == 10){
+sum2 = 10;}else if(arr[1] == 'J'||'Q'||'K'){
+sum2 = 10;}else if(arr[1] == 'A'){
+sum2 = 11;}
+sum2 = parseInt(sum2);
+return sum2 + sum;
+}
+
+var dealer = [getCard()];
+var player = [getCard(), getCard()];
+
+alert("Дилер: " + dealer + " ; " + 'Игрок: ' + player);
+alert("Игрок: " + player.join(' and '));
+alert("Текущая сумма карт: " + getSum(player));
+</script>
